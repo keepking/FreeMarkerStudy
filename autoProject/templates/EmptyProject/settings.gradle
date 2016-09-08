@@ -1,1 +1,1 @@
-include ':app',':logger',':utilcode',':example'
+include ':app',':logger',':imageloader',':utilcode',':example'

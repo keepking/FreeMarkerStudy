@@ -1,3 +1,0 @@
-sourceRoot: templates/EmptyProject
-outputRoot: d:/T5_App
-data: {project:json(../../config.json)}
