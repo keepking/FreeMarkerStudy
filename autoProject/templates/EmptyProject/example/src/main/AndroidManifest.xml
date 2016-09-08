@@ -1,0 +1,16 @@
+<!--
+  ~ Copyright (C) 2016 Facishare Technology Co., Ltd. All Rights Reserved.
+  -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.keepking.example">
+
+    <application
+            android:allowBackup="true"
+            android:label="@string/app_name"
+            android:supportsRtl="true">
+    <activity android:name=".logger.ExampleActivity"/>
+    <activity android:name=".utilcode.ExampleActivity"/>
+    <activity android:name=".greendao.ExampleActivity"/>
+    </application>
+
+</manifest>
