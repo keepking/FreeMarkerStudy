@@ -24,6 +24,17 @@ import java.util.List;
  */
 public class AppUtils {
 
+    private static Context gContext; //程序运行时初始化,可以减少后续context的输入
+
+    public static Context getContext(){
+        return gContext;
+    }
+
+    public static void setContext(Context context){
+        gContext = context;
+    }
+
+
     private AppUtils() {
         throw new UnsupportedOperationException("u can't fuck me...");
     }

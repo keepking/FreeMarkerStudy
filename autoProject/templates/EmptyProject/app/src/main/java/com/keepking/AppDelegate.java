@@ -2,15 +2,23 @@ package com.keepking;
 
 import java.util.List;
 
+import com.blankj.utilcode.utils.AppUtils;
 import com.keepking.greendao.bean.AppStartTime;
 import com.keepking.greendao.gen.AppStartTimeDao;
 import com.keepking.greendao.gen.DaoMaster;
 import com.keepking.greendao.gen.DaoSession;
+import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
+import com.nostra13.universalimageloader.core.display.CircleBitmapDisplayer;
 import com.orhanobut.logger.Logger;
 
 import android.app.Application;
 import android.content.ComponentCallbacks;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import ${project.applicationPackage}.R;
 
 public class AppDelegate {
@@ -27,6 +35,8 @@ public class AppDelegate {
 
     public void onCreate(Application application) {
         mApplication = application;
+		//初始化工具类
+        AppUtils.setContext(mApplication);
         //启动计数
         DaoMaster.DevOpenHelper devOpenHelper = new DaoMaster.DevOpenHelper(application, "app-db",
                 null);
