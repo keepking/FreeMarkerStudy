@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 23
+        targetSdkVersion ${project.compileSdkVersion}
         versionCode 1
         versionName "1.0"
     }
@@ -26,6 +26,7 @@ dependencies {
     compile project(':logger')
     compile project(':utilcode')
 	compile project(':imageloader')
+	compile project(':common')
     //retrofit+gson+rxjava
     compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
