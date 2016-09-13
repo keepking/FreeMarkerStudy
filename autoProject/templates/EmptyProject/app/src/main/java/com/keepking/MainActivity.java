@@ -1,7 +1,12 @@
 package com.keepking;
 
+import com.keepking.titlebar.TitleBar;
+
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 import ${project.applicationPackage}.R;
 
 public class MainActivity extends Activity {
@@ -18,7 +23,7 @@ public class MainActivity extends Activity {
 
         mTitleBar.setImmersive(true);
 
-        mTitleBar.setLeftText("·µ»Ø");
+        mTitleBar.setLeftText("è¿”å›ž");
         mTitleBar.setLeftClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -26,7 +31,7 @@ public class MainActivity extends Activity {
             }
         });
 
-        mTitleBar.setTitle("Ö÷±êÌâ\n¸±±êÌâ");
+        mTitleBar.setTitle("ä¸»æ ‡é¢˜\nå‰¯æ ‡é¢˜");
 
         mTitleBar.setTitleSize(24);
         mTitleBar.setSubTitleSize(12);
