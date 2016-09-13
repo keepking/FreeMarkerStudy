@@ -25,7 +25,7 @@
             android:layout_height="match_parent"
             android:gravity="center">
 
-            <com.sdsmdg.tastytoast.SuccessToastView
+            <com.keepking.toast.SuccessToastView
                 android:id="@+id/successView"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
