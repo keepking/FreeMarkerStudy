@@ -11,6 +11,7 @@ import com.orhanobut.logger.Logger;
 import android.app.Application;
 import android.content.ComponentCallbacks;
 import android.content.res.Configuration;
+import ${project.applicationPackage}.R;
 
 public class AppDelegate {
     private static AppDelegate mDelegate;
@@ -36,6 +37,27 @@ public class AppDelegate {
         astDao.insert(new AppStartTime((long) startTimes.size(),System.currentTimeMillis()));
         //初始化Logger
         Logger.init("StudyApp").methodCount(3).methodOffset(2);
+		//初始化ImageLoader
+        ImageLoaderConfiguration.Builder config = new ImageLoaderConfiguration.Builder(application);
+        config.threadPriority(Thread.NORM_PRIORITY - 2);
+        config.denyCacheImageMultipleSizesInMemory();
+        config.diskCacheFileNameGenerator(new Md5FileNameGenerator());
+        config.diskCacheSize(50 * 1024 * 1024); // 50 MiB
+        config.tasksProcessingOrder(QueueProcessingType.LIFO);
+        config.writeDebugLogs(); // Remove for release app
+
+        DisplayImageOptions.Builder options = new DisplayImageOptions.Builder();
+        options.showImageOnLoading(R.drawable.ic_stub);
+        options.showImageForEmptyUri(R.drawable.ic_empty);
+        options.showImageOnFail(R.drawable.ic_error);
+        options.cacheInMemory(true);
+        options.cacheOnDisk(true);
+        options.considerExifParams(true);
+        options.displayer(new CircleBitmapDisplayer(Color.WHITE, 5));
+
+        config.defaultDisplayImageOptions(options.build());
+        // Initialize ImageLoader with configuration.
+        ImageLoader.getInstance().init(config.build());
     }
 
     public void onTerminate() {
