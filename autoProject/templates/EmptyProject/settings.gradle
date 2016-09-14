@@ -1,1 +1,1 @@
-include ':app',':logger',':imageloader',':utilcode',':common',':example'
+include ':app',':logger',':imageloader',':utilcode',':common',':fastjson',':example'
