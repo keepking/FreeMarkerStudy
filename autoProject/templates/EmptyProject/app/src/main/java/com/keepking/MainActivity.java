@@ -1,6 +1,8 @@
 package com.keepking;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.keepking.titlebar.TitleBar;
+import com.keepking.toast.ToastUtil;
 
 import android.app.Activity;
 import android.graphics.Color;
@@ -10,12 +12,14 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import ${project.applicationPackage}.R;
 
 public class MainActivity extends Activity {
 
-    TitleBar mTitleBar;
-    TextView mHelloTv;
+    @BindView(R.id.title) TitleBar mTitleBar;
+    @BindView(R.id.tv_hello) TextView mHelloTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +32,7 @@ public class MainActivity extends Activity {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         }
         setContentView(R.layout.activity_main);
-        mTitleBar = (TitleBar) findViewById(R.id.title);
-        mHelloTv = (TextView) findViewById(R.id.tv_hello);
+        ButterKnife.bind(this);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             //标题栏设置沉浸式
@@ -54,14 +57,15 @@ public class MainActivity extends Activity {
         mTitleBar.addAction(new TitleBar.ImageAction(R.drawable.ic_error) {
             @Override
             public void performAction(View view) {
-
+                ToastUtil.show("error");
             }
         });
 
         mTitleBar.addAction(new TitleBar.TextAction("good") {
             @Override
             public void performAction(View view) {
-
+                new MaterialDialog.Builder(MainActivity.this).title("good").content("job").backgroundColor(Color
+                        .WHITE).build().show();
             }
         });
 
