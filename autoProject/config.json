@@ -5,15 +5,13 @@
 	"gradleVersion":"2.1.0",
 	"compileSdkVersion":23,
 	"buildToolsVersion":"23.0.3",
+	"supportLibraryVersion":"23.3.0",
 	"applicationPackage":"cn.king.t5",
 	"minSdkVersion":"14",
 	"targetSdkVersion":"23",
 	"versionCode":1,
 	"versionName":"5.4.1",
 	"dependencies":{
-		"compile":[
-			"com.android.support:appcompat-v7:23.3.0",
-			"com.android.support:design:23.3.0"
-		]
+		"compile":[]
 	}
 }
