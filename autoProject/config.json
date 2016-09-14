@@ -1,17 +1,22 @@
 {
-	"appName":"Temp_5",
-	"dir":"d:/Temp_5",
+	"appName":"Temp_9",
+	"dir":"d:/Temp_9",
 	"type":"EmptyProject",
 	"gradleVersion":"2.1.0",
 	"compileSdkVersion":23,
 	"buildToolsVersion":"23.0.3",
 	"supportLibraryVersion":"23.3.0",
-	"applicationPackage":"cn.king.t5",
+	"applicationPackage":"cn.king.t9",
 	"minSdkVersion":"14",
 	"targetSdkVersion":"23",
 	"versionCode":1,
 	"versionName":"5.4.1",
 	"dependencies":{
-		"compile":[]
+		"compile":[
+			"com.jakewharton:butterknife:8.4.0"
+		],
+		"apt":[
+			"com.jakewharton:butterknife-compiler:8.4.0"
+		]
 	}
 }

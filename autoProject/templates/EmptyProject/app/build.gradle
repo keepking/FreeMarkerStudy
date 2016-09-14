@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'org.greenrobot.greendao'
+apply plugin: 'android-apt'
 
 android {
     compileSdkVersion ${project.compileSdkVersion}
@@ -25,6 +26,9 @@ dependencies {
 	compile project(':example')
 	<#list project.dependencies.compile as compileItem>
     compile '${compileItem}'
+	</#list>
+	<#list project.dependencies.apt as aptItem>
+    apt '${aptItem}'
 	</#list>
 }
 

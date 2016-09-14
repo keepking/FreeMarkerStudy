@@ -1054,7 +1054,7 @@ public class MaterialDialog extends DialogBase implements
         }
 
         /**
-         * Sets the gravity used for the text in stacked action buttons. By default, it's #{@link GravityEnum#END}.
+         * Sets the gravity used for the text in stacked action buttons. By default, GravityEnum.END}.
          *
          * @param gravity The gravity to use.
          * @return The Builder instance so calls can be chained.
@@ -1405,7 +1405,7 @@ public class MaterialDialog extends DialogBase implements
         }
 
         /**
-         * Same as #{@link #inputRange(int, int, int)}, but it takes a color resource ID for the error color.
+         * Same as inputRange(int, int, int)}, but it takes a color resource ID for the error color.
          */
         public Builder inputRangeRes(@IntRange(from = 0, to = Integer.MAX_VALUE) int minLength,
                                      @IntRange(from = 1, to = Integer.MAX_VALUE) int maxLength,
@@ -1474,7 +1474,7 @@ public class MaterialDialog extends DialogBase implements
 
     /**
      * Retrieves the TextView that contains the dialog title. If you want to update the
-     * title, use #{@link #setTitle(CharSequence)} instead.
+     * title, use setTitle(CharSequence) instead.
      */
     public final TextView getTitleView() {
         return title;
@@ -1489,7 +1489,7 @@ public class MaterialDialog extends DialogBase implements
 
     /**
      * Retrieves the TextView that contains the dialog content. If you want to update the
-     * content (message), use #{@link #setContent(CharSequence)} instead.
+     * content (message), use {setContent(CharSequence)} instead.
      */
     @Nullable
     public final TextView getContentView() {
