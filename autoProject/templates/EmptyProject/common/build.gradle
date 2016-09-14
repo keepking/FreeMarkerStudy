@@ -23,4 +23,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:${project.supportLibraryVersion}'
     compile project(':imageloader')
 	compile project(':utilcode')
+	compile project(':materials')
 }
