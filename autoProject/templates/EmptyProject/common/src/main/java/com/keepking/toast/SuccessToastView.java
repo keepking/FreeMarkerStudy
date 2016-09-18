@@ -79,7 +79,7 @@ public class SuccessToastView extends View {
 
     public void startAnim() {
         stopAnim();
-        startViewAnim(0f, 1f, 2000);
+        startViewAnim(0f, 1f, 1000);
     }
 
     public void stopAnim() {
