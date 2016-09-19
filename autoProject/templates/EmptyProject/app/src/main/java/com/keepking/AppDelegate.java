@@ -14,11 +14,13 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.nostra13.universalimageloader.core.display.CircleBitmapDisplayer;
 import com.orhanobut.logger.Logger;
+import com.uuzuche.lib_zxing.DisplayUtil;
 
 import android.app.Application;
 import android.content.ComponentCallbacks;
 import android.content.res.Configuration;
 import android.graphics.Color;
+import android.util.DisplayMetrics;
 import ${project.applicationPackage}.R;
 
 public class AppDelegate {
@@ -68,6 +70,9 @@ public class AppDelegate {
         config.defaultDisplayImageOptions(options.build());
         // Initialize ImageLoader with configuration.
         ImageLoader.getInstance().init(config.build());
+
+        //zxing init
+        initDisplayOpinion();
     }
 
     public void onTerminate() {
@@ -98,5 +103,15 @@ public class AppDelegate {
     }
 
     public void unregisterOnProvideAssistDataListener(Application.OnProvideAssistDataListener callback) {
+    }
+
+    private void initDisplayOpinion() {
+        DisplayMetrics dm = mApplication.getResources().getDisplayMetrics();
+        DisplayUtil.density = dm.density;
+        DisplayUtil.densityDPI = dm.densityDpi;
+        DisplayUtil.screenWidthPx = dm.widthPixels;
+        DisplayUtil.screenhightPx = dm.heightPixels;
+        DisplayUtil.screenWidthDip = DisplayUtil.px2dip(mApplication, dm.widthPixels);
+        DisplayUtil.screenHightDip = DisplayUtil.px2dip(mApplication, dm.heightPixels);
     }
 }
