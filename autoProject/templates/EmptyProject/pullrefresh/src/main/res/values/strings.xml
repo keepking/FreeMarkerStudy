@@ -1,0 +1,6 @@
+<!--
+  ~ Copyright (C) 2016 Facishare Technology Co., Ltd. All Rights Reserved.
+  -->
+<resources>
+    <string name="app_name">PullRefresh</string>
+</resources>

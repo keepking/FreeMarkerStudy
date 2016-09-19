@@ -15,17 +15,28 @@
             android:layout_below="@id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-    <net.lucode.hackware.magicindicator.MagicIndicator
-            android:id="@+id/indicator"
-            android:layout_marginBottom="48dp"
-            android:layout_alignParentBottom="true"
-            android:layout_width="match_parent"
-            android:background="@android:color/holo_blue_light"
-            android:layout_height="48dp"/>
-    <com.keepking.viewpager.JazzyViewPager
-            android:id="@+id/pager"
+    <LinearLayout
             android:layout_below="@id/tv_hello"
-            android:layout_above="@id/indicator"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="match_parent">
+        <in.srain.cube.views.ptr.PtrClassicFrameLayout
+                android:id="@+id/view_pager_ptr_frame"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="0dp">
+
+            <com.keepking.viewpager.JazzyViewPager
+                    android:id="@+id/pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+        </in.srain.cube.views.ptr.PtrClassicFrameLayout>
+        <net.lucode.hackware.magicindicator.MagicIndicator
+                android:id="@+id/indicator"
+                android:layout_marginBottom="6dp"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:background="@android:color/holo_blue_light"
+                android:layout_height="48dp"/>
+    </LinearLayout>
 </RelativeLayout>

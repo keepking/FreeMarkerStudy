@@ -33,6 +33,7 @@ dependencies {
 	compile project(':magicindicator')
 	compile project(':eventbus')
 	compile project(':zxing')
+	compile project(':pullrefresh')
     //retrofit+gson+rxjava
     compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
     compile 'com.squareup.retrofit2:retrofit:2.1.0'

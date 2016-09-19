@@ -31,6 +31,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import in.srain.cube.views.ptr.PtrFrameLayout;
+import in.srain.cube.views.ptr.PtrHandler;
 import net.lucode.hackware.magicindicator.MagicIndicator;
 import net.lucode.hackware.magicindicator.ViewPagerHelper;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.CommonNavigator;
@@ -61,6 +63,8 @@ public class MainActivity extends Activity {
     JazzyViewPager mPager;
     @BindView(R.id.indicator)
     MagicIndicator mIndicator;
+    @BindView(R.id.view_pager_ptr_frame)
+    PtrFrameLayout mPtrFrame;
 
     @Override
     protected void onDestroy() {
@@ -218,6 +222,25 @@ public class MainActivity extends Activity {
         });
         mIndicator.setNavigator(commonNavigator);
         ViewPagerHelper.bind(mIndicator, mPager);
+
+        //init ultra-pull-to-refresh
+        mPtrFrame.disableWhenHorizontalMove(true);
+        mPtrFrame.setPtrHandler(new PtrHandler() {
+            @Override
+            public boolean checkCanDoRefresh(PtrFrameLayout frame, View content, View header) {
+                return true;
+            }
+
+            @Override
+            public void onRefreshBegin(final PtrFrameLayout frame) {
+                frame.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        frame.refreshComplete();
+                    }
+                },2000);
+            }
+        });
     }
 
     @Subscribe
